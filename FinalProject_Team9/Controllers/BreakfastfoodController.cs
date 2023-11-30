@@ -7,10 +7,10 @@ namespace FinalProject_Team9.Controllers
         [ApiController]
         [Route("[controller]")]
 
-        IItemService ctx;
-        public ItemController(IItemService service)
+        TeamContext ctx;
+        public BreakfastfoodController(TeamContext breakfastfood)
         {
-            ctx = service;
+            ctx = breakfastfood;
         }
 
         [HttpGet]
@@ -20,7 +20,7 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Item p)
+        public IActionResult Post(Foods p)
         {
             ctx.AddItem(p);
             return Ok();
