@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProject_Team9.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
 {
     public class TeamMembersController : Controller
     {
-        [ApiController]
-        [Route("[controller]")]
 
-        TeamContext ctx;
-        public TeamMembersController(TeamContext teammembers)
+        IItemService ctx;
+        public ItemController(IItemService service)
         {
             ctx = teammembers;
         }
@@ -16,13 +15,19 @@ namespace FinalProject_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllItems());
+            return Ok(ctx.GetTeamMembers());
+        }
+
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            return Ok(ctx.GetTeamMembersById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(Members p)
+        public IActionResult Post(Item p)
         {
-            ctx.AddItem(p);
+            ctx.AddTeamMember(team);
             return Ok();
         }
     }
