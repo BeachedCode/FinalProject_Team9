@@ -18,16 +18,16 @@ namespace FinalProject_Team9.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TeamMembers>().HasData(
-                new Product { Id = 1, FullName = " ", BirthDate = 0, CollegeProgram = " ", YearInProgram = " " }
+                new TeamMembers { FullName = " ", Birthdate = new DateTime(), CollegeProgram = " ", YearInProgram = " " }
                 );
             modelBuilder.Entity<Breakfastfood>().HasData(
-                new Product { Id = 1, FullName = " ", BirthDate = 0, CollegeProgram = " ", YearInProgram = " " }
+                new Breakfastfood { BreakfastItemName = " ", Ingredients = " ", Calories = " ", CuisineType = " " }
                 );
             modelBuilder.Entity<Cities>().HasData(
-                new Product { Id = 1, FullName = " ", BirthDate = 0, CollegeProgram = " ", YearInProgram = " " }
+                new Cities { FullName = " ", StreetAddress = " ", City = " ", Country = " " }
                 );
             modelBuilder.Entity<Hobbies>().HasData(
-                new Product { Id = 1, FullName = " ", BirthDate = 0, CollegeProgram = " ", YearInProgram = " " }
+                new Hobbies { HobbyName = " ", Description = " ", Frequency = " ", Costs = 1 }
                 );
         }
     }

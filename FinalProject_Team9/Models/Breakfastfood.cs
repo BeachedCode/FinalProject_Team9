@@ -3,9 +3,9 @@
     public class Breakfastfood
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
-        public DateTime Birthdate { get; set; }
-        public string Breakfast { get; set; }
-        public int age { get; set; }
+        public string BreakfastItemName { get; set; } = " ";
+        public string Ingredients { get; set; } = " ";
+        public string Calories { get; set; } = " ";
+        public string CuisineType { get; set; } = " ";
     }
 }
