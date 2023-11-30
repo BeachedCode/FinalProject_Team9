@@ -5,5 +5,7 @@
         int? AddTeamMember(TeamMembers teamMembers);
         List<TeamMembers> GetTeamMembers();
         TeamMembers GetTeamMembersById(int id);
+        int? UpdateTeamMembers(TeamMembers teamMembers);
+        int? RemoveTeamMemberById(int id);
     }
 }

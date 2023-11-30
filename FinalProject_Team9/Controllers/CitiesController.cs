@@ -1,28 +1,34 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProject_Team9.Data;
+using FinalProject_Team9.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
 {
     public class CitiesController : Controller
     {
-        [ApiController]
-        [Route("[controller]")]
-
-        IItemService ctx;
-        public ItemController(IItemService service)
+        ICity ctx;
+        public CitiesController (ICity city)
         {
-            ctx = service;
+            ctx = city;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllItems());
+            return Ok(ctx.GetCities());
+        }
+
+        [HttpGet("id")]
+
+        public IActionResult Get(int id) 
+        {
+            return Ok(ctx.GetCityById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(Item p)
+        public IActionResult Post(Cities c)
         {
-            ctx.AddItem(p);
+            ctx.AddCity(c);
             return Ok();
         }
     }
