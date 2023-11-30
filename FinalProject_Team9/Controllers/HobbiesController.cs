@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+
     public class HobbiesController : Controller
     {
 
