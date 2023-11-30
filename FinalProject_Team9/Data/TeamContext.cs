@@ -9,7 +9,7 @@ namespace FinalProject_Team9.Data
             base(options)
         { }
         public DbSet<TeamMembers> Members { get; set; }
-        public DbSet<Breakfastfood> Foods { get; set; }
+        public DbSet<Breakfastfoods> Foods { get; set; }
         public DbSet<Cities> Towns { get; set; }
         public DbSet<Hobbies> Things { get; set; }
 
@@ -20,7 +20,7 @@ namespace FinalProject_Team9.Data
             modelBuilder.Entity<TeamMembers>().HasData(
                 new TeamMembers { FullName = " ", Birthdate = new DateTime(), CollegeProgram = " ", YearInProgram = " " }
                 );
-            modelBuilder.Entity<Breakfastfood>().HasData(
+            modelBuilder.Entity<Breakfastfoods>().HasData(
                 new Breakfastfood { BreakfastItemName = " ", Ingredients = " ", Calories = " ", CuisineType = " " }
                 );
             modelBuilder.Entity<Cities>().HasData(
