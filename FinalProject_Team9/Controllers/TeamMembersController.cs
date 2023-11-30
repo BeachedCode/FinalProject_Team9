@@ -25,7 +25,7 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(TeamMember team)
+        public IActionResult Post(TeamMembers team)
         {
             ctx.AddTeamMember(team);
             return Ok();

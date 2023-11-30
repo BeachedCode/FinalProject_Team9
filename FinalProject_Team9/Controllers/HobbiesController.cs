@@ -1,4 +1,5 @@
 ﻿using FinalProject_Team9.Data;
+using FinalProject_Team9.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
@@ -6,8 +7,8 @@ namespace FinalProject_Team9.Controllers
     public class HobbiesController : Controller
     {
 
-        IHobby ctx;
-        public HobbiesController(IHobby hobbies)
+        IHobbies ctx;
+        public HobbiesController(IHobbies hobbies)
         {
             ctx = hobbies;
         }
@@ -15,7 +16,7 @@ namespace FinalProject_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllHobbies());
+            return Ok(ctx.GetHobbies());
         }
 
         [HttpGet("id")]
@@ -25,9 +26,9 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Hobby thing)
+        public IActionResult Post(Hobbies hobbies)
         {
-            ctx.AddHobby(thing);
+            ctx.AddHobbies(hobbies);
             return Ok();
         }
     }

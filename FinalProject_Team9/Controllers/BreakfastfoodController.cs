@@ -1,4 +1,5 @@
 ﻿using FinalProject_Team9.Data;
+using FinalProject_Team9.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
@@ -6,10 +7,10 @@ namespace FinalProject_Team9.Controllers
     public class BreakfastfoodController : Controller
     {
 
-        IBreakfastfood ctx;
-        public BreakfastfoodController(IBreakfastfood breakfastfoods)
+        IBreakfast ctx;
+        public BreakfastfoodController(IBreakfast breakfastfood)
         {
-            ctx = breakfastfoods;
+            ctx = breakfastfood;
         }
 
         [HttpGet]
@@ -25,9 +26,9 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(BreakfastFood food)
+        public IActionResult Post(Breakfastfood breakfastfood)
         {
-            ctx.AddBreakfastFood(food);
+            ctx.AddBreakfastFood(breakfastfood);
             return Ok();
         }
     }

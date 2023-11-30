@@ -1,4 +1,5 @@
 ﻿using FinalProject_Team9.Data;
+using FinalProject_Team9.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
@@ -6,8 +7,8 @@ namespace FinalProject_Team9.Controllers
     public class CitiesController : Controller
     {
 
-        ICity ctx;
-        public CitiesController(Icity cities)
+        ICities ctx;
+        public CitiesController(ICities cities)
         {
             ctx = cities;
         }
@@ -15,19 +16,19 @@ namespace FinalProject_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllCities());
+            return Ok(ctx.GetCities());
         }
 
         [HttpGet("id")]
         public IActionResult Get(int id)
         {
-            return Ok(ctx.GetCitiesById(id));
+            return Ok(ctx.GetCityById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(City town)
+        public IActionResult Post(Cities cities)
         {
-            ctx.AddCity(town);
+            ctx.AddCities(cities);
             return Ok();
         }
     }
