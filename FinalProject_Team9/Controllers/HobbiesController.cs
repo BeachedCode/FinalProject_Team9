@@ -7,8 +7,8 @@ namespace FinalProject_Team9.Controllers
         [ApiController]
         [Route("[controller]")]
 
-        TeamContext ctx;
-        public HobbiesController(TeamContext hobbies)
+        IHobby ctx;
+        public HobbiesController(IHobby hobbies)
         {
             ctx = hobbies;
         }
@@ -16,13 +16,19 @@ namespace FinalProject_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllItems());
+            return Ok(ctx.GetAllHobbies());
+        }
+
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            return Ok(ctx.GetHobbiesById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(Things p)
+        public IActionResult Post(Hobby thing)
         {
-            ctx.AddItem(p);
+            ctx.AddHobby(thing);
             return Ok();
         }
     }

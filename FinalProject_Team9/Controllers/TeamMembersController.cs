@@ -6,8 +6,8 @@ namespace FinalProject_Team9.Controllers
     public class TeamMembersController : Controller
     {
 
-        IItemService ctx;
-        public ItemController(IItemService service)
+        ITeamMember ctx;
+        public TeamMembersController(ITeamMember teammembers)
         {
             ctx = teammembers;
         }
@@ -25,7 +25,7 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Item p)
+        public IActionResult Post(TeamMember team)
         {
             ctx.AddTeamMember(team);
             return Ok();

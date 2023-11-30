@@ -7,22 +7,28 @@ namespace FinalProject_Team9.Controllers
         [ApiController]
         [Route("[controller]")]
 
-        TeamContext ctx;
-        public BreakfastfoodController(TeamContext breakfastfood)
+        IBreakfastfood ctx;
+        public BreakfastfoodController(IBreakfastfood breakfastfoods)
         {
-            ctx = breakfastfood;
+            ctx = breakfastfoods;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllItems());
+            return Ok(ctx.GetAllBreakfastFoods());
+        }
+
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            return Ok(ctx.GetsBreakfastFoodsById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(Foods p)
+        public IActionResult Post(BreakfastFood food)
         {
-            ctx.AddItem(p);
+            ctx.AddBreakfastFood(food);
             return Ok();
         }
     }
