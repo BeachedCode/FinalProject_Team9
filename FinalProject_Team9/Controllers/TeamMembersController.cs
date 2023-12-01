@@ -16,7 +16,7 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Get()
         {
             return Ok(ctx.GetTeamMembers());
         }
