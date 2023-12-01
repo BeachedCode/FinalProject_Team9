@@ -4,12 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+
     public class CitiesController : Controller
     {
-        ICity ctx;
-        public CitiesController (ICity city)
+
+        ICities ctx;
+        public CitiesController(ICities cities)
         {
-            ctx = city;
+            ctx = cities;
         }
 
         [HttpGet]
@@ -19,16 +23,15 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpGet("id")]
-
-        public IActionResult Get(int id) 
+        public IActionResult Get(int id)
         {
             return Ok(ctx.GetCityById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(Cities c)
+        public IActionResult Post(Cities cities)
         {
-            ctx.AddCity(c);
+            ctx.AddCities(cities);
             return Ok();
         }
     }

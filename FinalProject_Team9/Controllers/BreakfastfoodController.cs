@@ -1,28 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProject_Team9.Data;
+using FinalProject_Team9.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+
     public class BreakfastfoodController : Controller
     {
-        [ApiController]
-        [Route("[controller]")]
 
-        IItemService ctx;
-        public ItemController(IItemService service)
+        IBreakfast ctx;
+        public BreakfastfoodController(IBreakfast breakfastfood)
         {
-            ctx = service;
+            ctx = breakfastfood;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllItems());
+            return Ok(ctx.GetAllBreakfastFoods());
+        }
+
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            return Ok(ctx.GetsBreakfastFoodsById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(Item p)
+        public IActionResult Post(Breakfastfood breakfastfood)
         {
-            ctx.AddItem(p);
+            ctx.AddBreakfastFood(breakfastfood);
             return Ok();
         }
     }

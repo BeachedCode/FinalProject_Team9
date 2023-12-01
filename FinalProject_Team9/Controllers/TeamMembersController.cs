@@ -3,13 +3,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+
     public class TeamMembersController : Controller
     {
 
         ITeamMember ctx;
-        public TeamMembersController(ITeamMember teamMember)
+        public TeamMembersController(ITeamMember teammembers)
         {
-            ctx = teamMember;
+            ctx = teammembers;
         }
 
         [HttpGet]

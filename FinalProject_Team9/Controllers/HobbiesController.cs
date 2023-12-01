@@ -1,28 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProject_Team9.Data;
+using FinalProject_Team9.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+
     public class HobbiesController : Controller
     {
-        [ApiController]
-        [Route("[controller]")]
 
-        IItemService ctx;
-        public ItemController(IItemService service)
+        IHobbies ctx;
+        public HobbiesController(IHobbies hobbies)
         {
-            ctx = service;
+            ctx = hobbies;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(ctx.GetAllItems());
+            return Ok(ctx.GetHobbies());
+        }
+
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            return Ok(ctx.GetHobbiesById(id));
         }
 
         [HttpPost]
-        public IActionResult Post(Item p)
+        public IActionResult Post(Hobbies hobbies)
         {
-            ctx.AddItem(p);
+            ctx.AddHobbies(hobbies);
             return Ok();
         }
     }
