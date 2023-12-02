@@ -25,7 +25,7 @@ namespace FinalProject_Team9.Controllers
         [HttpGet("id")]
         public IActionResult Get(int id)
         {
-            return Ok(ctx.GetsBreakfastFoodsById(id));
+            return Ok(ctx.GetBreakfastFoodsById(id));
         }
 
         [HttpPost]
@@ -50,7 +50,7 @@ namespace FinalProject_Team9.Controllers
         [Route("api/delete")]
         public IActionResult Delete(int id) //Delete
         {
-            var breakfastfood = ctx.GetsBreakfastFoodsById(id);
+            var breakfastfood = ctx.GetBreakfastFoodsById(id);
             if (breakfastfood == null)
             {
                 return NotFound(id);
