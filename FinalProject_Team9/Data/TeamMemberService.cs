@@ -32,7 +32,7 @@ namespace FinalProject_Team9.Data
             return ctx.SaveChanges();
         }
         
-        public int? RemoveTeamMemberById(int id)
+        public int? RemoveTeamMembersById(int id)
         {
             var member = this.GetTeamMembersById(id);
             if (member == null) 
