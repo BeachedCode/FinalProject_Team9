@@ -11,10 +11,9 @@ namespace FinalProject_Team9.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TeamMembers>().HasData(
-                new TeamMembers { FullName = "John Smith", Birthdate = new DateTime(2023, 11, 30), CollegeProgram = "IT", YearInProgram = "3rd" },
-                new TeamMembers { FullName = "Jane Smith", Birthdate = new DateTime(2003, 5, 15), CollegeProgram = "Cybersecurity", YearInProgram = "1st" },
                 new TeamMembers { FullName = "Ethan Beach", Birthdate = new DateTime(2002, 8, 6), CollegeProgram = "IT", YearInProgram = "3rd" },
-                new TeamMembers { FullName = "Calvin Yeboah", Birthdate = new DateTime(2004,3,25), CollegeProgram = "Computer Science", YearInProgram = "1st"}
+                new TeamMembers { FullName = "Calvin Yeboah", Birthdate = new DateTime(2004,3,25), CollegeProgram = "Computer Science", YearInProgram = "1st"},
+                new TeamMembers { FullName = "Ethan White", Birthdate = new DateTime(2003, 5, 21), CollegeProgram = "IT", YearInProgram = "3rd" },
             );
         }
     }
