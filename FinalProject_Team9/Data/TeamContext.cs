@@ -13,6 +13,7 @@ namespace FinalProject_Team9.Data
             modelBuilder.Entity<TeamMembers>().HasData(
                 new TeamMembers { FullName = "John Smith", Birthdate = new DateTime(2023, 11, 30), CollegeProgram = "IT", YearInProgram = "3rd" },
                 new TeamMembers { FullName = "Jane Smith", Birthdate = new DateTime(2003, 5, 15), CollegeProgram = "Cybersecurity", YearInProgram = "1st" }
+                new TeamMembers { FullName = "Ethan Beach", Birthdate = new DateTime(2002, 8, 6), CollegeProgram = "IT", YearInProgram = "3rd" }
             );
         }
     }
