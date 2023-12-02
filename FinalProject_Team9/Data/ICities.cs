@@ -6,7 +6,10 @@ namespace FinalProject_Team9.Data
     {
         int? AddCities(Cities cities);
         List<Cities> GetCities();
+        object GetCitiesById(int id);
         Cities GetCityById(int id);
+        int? RemoveCitiesById(int id);
+        int? UpdateCites(Cities cities);
     }
 }
 

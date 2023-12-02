@@ -7,5 +7,7 @@ namespace FinalProject_Team9.Data
         int? AddHobbies(Hobbies hobbies);
         List<Hobbies> GetHobbies();
         Hobbies GetHobbiesById(int id);
+        int? RemoveHobbiesById(int id);
+        int? UpdateHobbies(Hobbies hobbies);
     }
 }

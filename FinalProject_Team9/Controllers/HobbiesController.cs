@@ -29,9 +29,37 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Hobbies hobbies)
+        public IActionResult Post(Hobbies hobbies) //Create
         {
             ctx.AddHobbies(hobbies);
+            return Ok();
+        }
+
+        [HttpPut]
+        public IActionResult Put(Hobbies hobbies) //Update
+        {
+            var result = ctx.UpdateHobbies(hobbies);
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
+            return Ok();
+        }
+
+        [HttpDelete("id")]
+        [Route("api/delete")]
+        public IActionResult Delete(int id) //Delete
+        {
+            var hobbies = ctx.GetHobbiesById(id);
+            if (hobbies == null)
+            {
+                return NotFound(id);
+            }
+            var result = ctx.RemoveHobbiesById(id);
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
             return Ok();
         }
     }

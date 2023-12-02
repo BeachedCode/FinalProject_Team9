@@ -47,14 +47,14 @@ namespace FinalProject_Team9.Controllers
 
         [HttpDelete("id")]
         [Route("api/delete")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int id) //Delete
         {
             var team = ctx.GetTeamMembersById(id);
             if(team == null)
             {
                 return NotFound(id);
             }
-            var result = ctx.RemoveTeamMemberById(id);
+            var result = ctx.RemoveTeamMembersById(id);
             if(result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");

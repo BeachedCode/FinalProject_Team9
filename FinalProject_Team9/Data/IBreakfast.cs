@@ -7,5 +7,7 @@ namespace FinalProject_Team9.Data
         int? AddBreakfastFood(Breakfastfood breakfastfood);
         List<Breakfastfood> GetAllBreakfastFoods();
         Breakfastfood GetsBreakfastFoodsById(int id);
+        int? RemoveBreakfastFoodsById(int id);
+        int? UpdateBreakfastFood(Breakfastfood breakfastfood);
     }
 }

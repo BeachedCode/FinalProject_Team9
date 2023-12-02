@@ -29,9 +29,37 @@ namespace FinalProject_Team9.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Breakfastfood breakfastfood)
+        public IActionResult Post(Breakfastfood breakfastfood) //Create
         {
             ctx.AddBreakfastFood(breakfastfood);
+            return Ok();
+        }
+
+        [HttpPut]
+        public IActionResult Put(Breakfastfood breakfastfood) //Update
+        {
+            var result = ctx.UpdateBreakfastFood(breakfastfood);
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
+            return Ok();
+        }
+
+        [HttpDelete("id")]
+        [Route("api/delete")]
+        public IActionResult Delete(int id) //Delete
+        {
+            var breakfastfood = ctx.GetsBreakfastFoodsById(id);
+            if (breakfastfood == null)
+            {
+                return NotFound(id);
+            }
+            var result = ctx.RemoveBreakfastFoodsById(id);
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
             return Ok();
         }
     }
