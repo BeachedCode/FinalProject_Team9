@@ -1,4 +1,4 @@
-﻿using FinalProject_Team9.Data;
+﻿using FinalProject_Team9.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_Team9.Controllers

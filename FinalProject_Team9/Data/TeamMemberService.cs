@@ -1,4 +1,5 @@
-﻿using FinalProject_Team9.Models;
+﻿using FinalProject_Team9.Data.Interfaces;
+using FinalProject_Team9.Models;
 
 namespace FinalProject_Team9.Data
 {

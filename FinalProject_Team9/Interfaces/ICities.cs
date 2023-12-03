@@ -1,6 +1,6 @@
 ﻿using FinalProject_Team9.Models;
 
-namespace FinalProject_Team9.Data
+namespace FinalProject_Team9.Data.Interfaces
 {
     public interface ICities
     {

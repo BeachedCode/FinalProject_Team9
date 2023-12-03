@@ -1,4 +1,4 @@
-﻿namespace FinalProject_Team9.Data
+﻿namespace FinalProject_Team9.Data.Interfaces
 {
     public interface ITeamMember
     {
